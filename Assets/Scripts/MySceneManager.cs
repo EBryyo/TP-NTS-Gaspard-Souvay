@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MySceneManager : MonoBehaviour
 {
-    public GUI quitButton;
-    public GUI retryButton;
+    public GameObject quitButton;
+    public GameObject retryButton;
     // Start is called before the first frame update
     void Start()
     {
-        
+        quitButton.SetActive(false);
+        retryButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,17 +23,15 @@ public class MySceneManager : MonoBehaviour
     public void pauseGame()
     {
         Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-        var buttons = GameObject.FindGameObjectsWithTag("Quit");
-        if (buttons.Length > 0)
+        if (quitButton.activeInHierarchy)
         {
-            foreach (GameObject button in buttons)
-            { 
-                Destroy(button); 
-            }
+            quitButton.SetActive(false);
+            retryButton.SetActive(false);
         }
         else
         {
-            
+            quitButton.SetActive(true);
+            retryButton.SetActive(true);
         }
     }
 
@@ -43,6 +42,7 @@ public class MySceneManager : MonoBehaviour
 
     public void Retry()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("SampleScene");
     }
 }
