@@ -1,0 +1,6 @@
+Le principe du jeu est simple : des balles apparaissent au dessus du sol, devant le joueur et tombent vers le sol progressivement.
+Le joueur doit simplement les toucher sur son ecran pour les faire disparaitre, ce qui incrémente son score.
+Le but du jeu est d'obtenir le score le plus haut, le jeu se terminant lorsqu'une balle touche le sol.
+La gestion de l'instanciation des balles a ete faite de maniere similaire au TP precedent, en modifiant les fourchettes de la génération aléatoire pour que
+les balles apparaissent toujours devant le joueur.
+La détection de plan et la gravité n'ont pas pu être implémentés par faute de temps, mais le bouton pause, la destruction et l'apparition d'objets aux endroits désirés et les effets de particules sont fonctionnels.
